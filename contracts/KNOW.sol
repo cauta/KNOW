@@ -1,17 +1,17 @@
 pragma solidity ^0.4.18;
-import "./BasicKrypto.sol";
+import "./BasicKNOW.sol";
 
 // ----------------------------------------------------------------------------------------------
-// Krypto Token by Krypto Limited.
+// KNOW Token by KNOW Limited.
 // An ERC20 standard
 //
-// author: Krypto Team
+// author: KNOW Team
 // Contact: datwhnguyen@gmail.com 
-contract Krypto is BasicKrypto {
+contract KNOW is BasicKNOW {
 
-    bool public _selling = true;//initial selling
+    bool public _selling = false;//initial selling
     
-    uint256 public _originalBuyPrice = 43 * 10**12; // original buy 1ETH = 4300 Krypto = 43 * 10**12 unit
+    uint256 public _originalBuyPrice = 43 * 10**12; // original buy 1ETH = 4300 KNOW = 43 * 10**12 unit
 
     // List of approved investors
     mapping(address => bool) private approvedInvestorList;
@@ -20,7 +20,7 @@ contract Krypto is BasicKrypto {
     mapping(address => uint256) private deposit;
     
     // icoPercent
-    uint256 public _icoPercent = 10;
+    uint256 public _icoPercent = 0;
     
     // _icoSupply is the avalable unit. Initially, it is _totalSupply
     uint256 public _icoSupply = _totalSupply * _icoPercent / 100;
@@ -67,11 +67,11 @@ contract Krypto is BasicKrypto {
     function()
     public
     payable {
-        buyKrypto();
+        buyKNOW();
     }
     
     /// @dev buy function allows to buy ether. for using optional data
-    function buyKrypto()
+    function buyKNOW()
     public
     payable
     onSale
@@ -98,7 +98,7 @@ contract Krypto is BasicKrypto {
     }
 
     /// @dev Constructor
-    function Krypto() BasicKrypto()
+    function KNOW() BasicKNOW()
     public {
         setBuyPrice(_originalBuyPrice);
     }
@@ -139,8 +139,8 @@ contract Krypto is BasicKrypto {
     public {
         require(newBuyPrice>0);
         _originalBuyPrice = newBuyPrice; // unit
-        // control _maximumBuy_USD = 10,000 USD, Krypto price is 0.1USD
-        // maximumBuy_Krypto = 100,000 Krypto = 100,000,0000000000 unit = 10^15
+        // control _maximumBuy_USD = 10,000 USD, KNOW price is 0.1USD
+        // maximumBuy_KNOW = 100,000 KNOW = 100,000,0000000000 unit = 10^15
         _maximumBuy = 10**18 * 10**15 /_originalBuyPrice;
     }
     

@@ -3,18 +3,18 @@ import "./ERC223.sol";
 import "./SafeMath.sol";
 import "./ContractReceiver.sol";
 // ----------------------------------------------------------------------------------------------
-// Krypto Token by Krypto Limited.
+// KNOW Token by Krypto Limited.
 // An ERC223 standard
 //
 // author: Krypto Team
 // Contact: datwhnguyen@gmail.com 
-contract BasicKrypto is ERC223 {
+contract BasicKNOW is ERC223 {
     using SafeMath for uint256;
     
     uint256 public constant decimals = 10;
-    string public constant symbol = "KRT";
-    string public constant name = "Krypto";
-    uint256 public _totalSupply = 10 ** 19; // total supply is 10^19 unit, equivalent to 10^9 Krypto
+    string public constant symbol = "KNOW";
+    string public constant name = "KNOW";
+    uint256 public _totalSupply = 10 ** 19; // total supply is 10^19 unit, equivalent to 10^9 KNOW
 
     // Owner of this contract
     address public owner;
@@ -22,7 +22,7 @@ contract BasicKrypto is ERC223 {
     // tradable
     bool public tradable = false;
 
-    // Balances Krypto for each account
+    // Balances KNOW for each account
     mapping(address => uint256) balances;
     
     // Owner of account approves the transfer of an amount to another account
@@ -42,7 +42,7 @@ contract BasicKrypto is ERC223 {
     }
 
     /// @dev Constructor
-    function BasicKrypto() 
+    function BasicKNOW() 
     public {
         owner = msg.sender;
         balances[owner] = _totalSupply;

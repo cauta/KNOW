@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 import "./ERC20.sol";
 
 // ----------------------------------------------------------------------------------------------
-// Krypto Token by Krypto Limited.
+// KNOW Token by Krypto Limited.
 // An ERC223 interface
 //
 // author: Krypto Team

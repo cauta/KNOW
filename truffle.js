@@ -6,9 +6,9 @@ var mnemonic_test = "first way scale critic never cradle volcano rhythm exchange
 module.exports = {
     // See <http://truffleframework.com/docs/advanced/configuration>
     // to customize your Truffle configuration! 
-    package_name: "Krypto",
+    package_name: "KNOW",
     version: "0.0.1",
-    description: "Deploy Krypto token",
+    description: "Deploy KNOW token",
     authors: [
         "Trong Cau Ta <trongcauhcmus@gmail.com>"
     ],
@@ -20,7 +20,7 @@ module.exports = {
     networks: {
         ropsten: {
             provider: function() {
-                return new HDWalletProvider(mnemonic_test, "https://ropsten.infura.io/BEvyXAHwmD8PWVIbupLH");
+                return new HDWalletProvider(mnemonic_test, "https://ropsten.infura.io/");
             },
             network_id: '3',
             gas: 4000000,
