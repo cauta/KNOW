@@ -1,17 +1,17 @@
 {
-  "name": "KNOW",
-  "version": "1.0.0",
-  "description": "KNOW smart contract token generation",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "trongcauta",
-  "license": "ISC",
-  "dependencies": {
-    "truffle-hdwallet-provider": "0.0.3"
-  }
+    "name": "know",
+    "version": "1.0.0",
+    "description": "KNOW smart contract token generation",
+    "main": "truffle-config.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "trongcauta",
+    "license": "ISC",
+    "dependencies": {
+        "truffle-hdwallet-provider": "0.0.3"
+    }
 }

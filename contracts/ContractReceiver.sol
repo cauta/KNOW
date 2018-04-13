@@ -30,10 +30,4 @@ contract ContractReceiver {
         assert(address(this).call(_data));
         Token(_from, _value, _data);
     }
-    
-    function increase(uint256 value)
-    external {
-        require(msg.sender == address(this));
-        a = a+value;
-    }
 }
