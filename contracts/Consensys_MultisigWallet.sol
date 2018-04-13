@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
-import "./Krypto.sol";
+import "./KNOW.sol";
 
 // ----------------------------------------------------------------------------------------------
-// Krypto Token by Krypto Limited.
+// KNOW Token by Krypto Limited.
 // An ERC20 standard
 //
 // author: Krypto Team
@@ -379,7 +379,7 @@ contract MultiSigWallet {
         onlyWallet
     {
         require(flag == true);
-        CoinCreation(new Krypto());
+        CoinCreation(new KNOW());
         flag = false;
     }
 }

@@ -1,9 +1,9 @@
-const Krypto = artifacts.require('./Krypto.sol');
+const KNOW = artifacts.require('./KNOW.sol');
 
-contract('Krypto', async accounts => {
+contract('KNOW', async accounts => {
 
     it('addInvestorList() -> removeInvestorList() should do it right', async () => {
-        const contract = await Krypto.deployed();
+        const contract = await KNOW.deployed();
         const address = 0x03747F06215B44E498831dA019B27f53E483599F;
 
         // Check is a new investor
@@ -22,13 +22,13 @@ contract('Krypto', async accounts => {
     });
 
     it('msg.sender should be the owner of this contract: ', async () => {
-        const contract = await Krypto.deployed();
+        const contract = await KNOW.deployed();
         const owner = await contract.owner.call();
         assert.equal(owner, accounts[0], 'first token is not own by owner');
     });
 
     it('balance of owner should be 1,000,000,000 * 10^10: ', async () => {
-        const contract = await Krypto.deployed();
+        const contract = await KNOW.deployed();
         const balance = await contract.balanceOf.call(accounts[0]);
         assert.equal(balance, 10 ** 19, 'balance of owner is wrong');
     });
@@ -36,7 +36,7 @@ contract('Krypto', async accounts => {
     it('turnOnTradable() should do it right', async () => {
         const accountZero = accounts[0];
         const accountOne = accounts[1];
-        const contract = await Krypto.deployed();
+        const contract = await KNOW.deployed();
 
         await contract
             .turnOnTradable({ from: accountOne })
@@ -69,7 +69,7 @@ contract('Krypto', async accounts => {
         let accountZeroEndingBalance;
         let accountOneEndingBalance;
 
-        const contract = await Krypto.deployed();
+        const contract = await KNOW.deployed();
         let balance = await contract.balanceOf.call(accountZero);
 
         accountZeroStartingBalance = balance.toNumber();

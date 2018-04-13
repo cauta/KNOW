@@ -1,5 +1,5 @@
-var krypto = artifacts.require("./Krypto.sol");
+var KNOW = artifacts.require("./KNOW.sol");
 
 module.exports = function(deployer) {
-    deployer.deploy(krypto);
+    deployer.deploy(KNOW);
 };

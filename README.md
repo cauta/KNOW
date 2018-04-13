@@ -1,4 +1,4 @@
-# krypto
+# KNOW
 ## init project
 ```
 npm install -g truffle

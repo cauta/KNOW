@@ -1,7 +1,7 @@
 {
-  "name": "krypto",
+  "name": "KNOW",
   "version": "1.0.0",
-  "description": "Krypto smart contract token generation",
+  "description": "KNOW smart contract token generation",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
