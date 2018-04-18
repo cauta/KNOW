@@ -16,3 +16,12 @@ config/test/contracts.json
 build
 dist
 
+build/contracts/ContractReceiver.json
+build/contracts/BasicKrypto.json
+build/contracts/ERC20.json
+build/contracts/ERC223.json
+build/contracts/Krypto.json
+build/contracts/Migrations.json
+build/contracts/MultiSigWallet.json
+build/contracts/Receive.json
+build/contracts/SafeMath.json

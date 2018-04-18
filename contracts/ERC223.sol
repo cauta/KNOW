@@ -2,11 +2,11 @@ pragma solidity ^0.4.18;
 import "./ERC20.sol";
 
 // ----------------------------------------------------------------------------------------------
-// KNOW Token by Krypto Limited.
-// An ERC223 interface
+// KNOW Token by Kryptono Limited.
+// An ERC223 standard
 //
-// author: Krypto Team
-// Contact: datwhnguyen@gmail.com
+// author: Kryptono Team
+// Contact: William@kryptono.exchange
 
 contract ERC223 is ERC20{
     function transfer(address _to, uint _value, bytes _data) public returns (bool success);

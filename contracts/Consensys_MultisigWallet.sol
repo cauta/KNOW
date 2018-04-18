@@ -2,11 +2,11 @@ pragma solidity ^0.4.18;
 import "./KNOW.sol";
 
 // ----------------------------------------------------------------------------------------------
-// KNOW Token by Krypto Limited.
-// An ERC20 standard
+// KNOW Token by Kryptono Limited.
+// An ERC223 standard
 //
-// author: Krypto Team
-// Contact: datwhnguyen@gmail.com
+// author: Kryptono Team
+// Contact: William@kryptono.exchange
 
 /// @title Multisignature wallet - Allows multiple parties to agree on transactions before execution.
 /// @author Stefan George - <stefan.george@consensys.net>

@@ -3,11 +3,11 @@ import "./ERC223.sol";
 import "./SafeMath.sol";
 import "./ContractReceiver.sol";
 // ----------------------------------------------------------------------------------------------
-// KNOW Token by Krypto Limited.
+// KNOW Token by Kryptono Limited.
 // An ERC223 standard
 //
-// author: Krypto Team
-// Contact: datwhnguyen@gmail.com 
+// author: Kryptono Team
+// Contact: William@kryptono.exchange
 contract BasicKNOW is ERC223 {
     using SafeMath for uint256;
     

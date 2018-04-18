@@ -1,8 +1,8 @@
-const KNOW = artifacts.require('./KNOW.sol');
+const KNOW = artifacts.require('KNOW');
 
 contract('KNOW', async accounts => {
 
-    it('addInvestorList() -> removeInvestorList() should do it right', async () => {
+    it('addInvestorList() -> removeInvestorList() should do it right', async() => {
         const contract = await KNOW.deployed();
         const address = 0x03747F06215B44E498831dA019B27f53E483599F;
 
@@ -21,19 +21,19 @@ contract('KNOW', async accounts => {
         assert.equal(isApproved, false, 'Removed investor is an approved investor');
     });
 
-    it('msg.sender should be the owner of this contract: ', async () => {
+    it('msg.sender should be the owner of this contract: ', async() => {
         const contract = await KNOW.deployed();
         const owner = await contract.owner.call();
         assert.equal(owner, accounts[0], 'first token is not own by owner');
     });
 
-    it('balance of owner should be 1,000,000,000 * 10^10: ', async () => {
+    it('balance of owner should be 1,000,000,000 * 10^10: ', async() => {
         const contract = await KNOW.deployed();
         const balance = await contract.balanceOf.call(accounts[0]);
         assert.equal(balance, 10 ** 19, 'balance of owner is wrong');
     });
 
-    it('turnOnTradable() should do it right', async () => {
+    it('turnOnTradable() should do it right', async() => {
         const accountZero = accounts[0];
         const accountOne = accounts[1];
         const contract = await KNOW.deployed();
@@ -59,7 +59,7 @@ contract('KNOW', async accounts => {
         assert.equal(tradableZero, true, 'tradable was not turn on by owner');
     });
 
-    it('transfer should do it right', async () => {
+    it('transfer should do it right', async() => {
         const accountZero = accounts[0];
         const accountOne = accounts[1];
         const amount = 10 ** 13;

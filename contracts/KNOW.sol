@@ -2,11 +2,11 @@ pragma solidity ^0.4.18;
 import "./BasicKNOW.sol";
 
 // ----------------------------------------------------------------------------------------------
-// KNOW Token by KNOW Limited.
-// An ERC20 standard
+// KNOW Token by Kryptono Limited.
+// An ERC223 standard
 //
-// author: KNOW Team
-// Contact: datwhnguyen@gmail.com 
+// author: Kryptono Team
+// Contact: William@kryptono.exchange
 contract KNOW is BasicKNOW {
 
     bool public _selling = false;//initial selling
