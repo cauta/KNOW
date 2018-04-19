@@ -179,6 +179,7 @@ contract BasicKNOW is ERC223 {
             receiver.tokenFallback(msg.sender, _value, _data);
             Transfer(msg.sender, _to, _value, _data);
         }
+        
         return true;
     }
     
@@ -248,7 +249,7 @@ contract BasicKNOW is ERC223 {
     }
 
     // withdraw any ERC20 token in this contract to owner
-    function transferAnyERC20Token(address tokenAddress, uint tokens) public onlyOwner returns (bool success) {
+    function transferAnyERC20Token(address tokenAddress, uint tokens) public returns (bool success) {
         return ERC223(tokenAddress).transfer(owner, tokens);
     }
     
@@ -277,7 +278,7 @@ contract KNOW is BasicKNOW {
     uint256 public _icoPercent = 0;
     
     // _icoSupply is the avalable unit. Initially, it is _totalSupply
-    uint256 public _icoSupply = _totalSupply * _icoPercent / 100;
+    uint256 public _icoSupply = (_totalSupply * _icoPercent) / 100;
     
     // minimum buy 0.3 ETH
     uint256 public _minimumBuy = 3 * 10 ** 17;
@@ -313,11 +314,11 @@ contract KNOW is BasicKNOW {
     modifier validValue(){
         // require value >= _minimumBuy AND total deposit of msg.sender <= maximumBuyPrice
         require ( (msg.value >= _minimumBuy) &&
-                ( (deposit[msg.sender] + msg.value) <= _maximumBuy) );
+                ( (deposit[msg.sender].add(msg.value)) <= _maximumBuy) );
         _;
     }
 
-    /// @dev Fallback function allows to buy ether.
+    /// @dev Fallback function allows to buy by ether.
     function()
     public
     payable {
@@ -375,7 +376,7 @@ contract KNOW is BasicKNOW {
     public 
     onlyOwner {
         _icoPercent = newIcoPercent;
-        _icoSupply = _totalSupply * _icoPercent / 100;
+        _icoSupply = (_totalSupply * _icoPercent) / 100;
     }
     
     /// @dev set new _maximumBuy
@@ -395,7 +396,7 @@ contract KNOW is BasicKNOW {
         _originalBuyPrice = newBuyPrice; // unit
         // control _maximumBuy_USD = 10,000 USD, KNOW price is 0.1USD
         // maximumBuy_KNOW = 100,000 KNOW = 100,000,0000000000 unit = 10^15
-        _maximumBuy = 10**18 * 10**15 /_originalBuyPrice;
+        _maximumBuy = (10**18 * 10**15) /_originalBuyPrice;
     }
     
     /// @dev check address is approved investor

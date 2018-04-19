@@ -1,5 +1,23 @@
 const KNOW = artifacts.require('KNOW');
+const Multisig = artifacts.require("MultiSigWallet");
 
+
+contract('MultiSigWallet', async accounts => {
+    it('create coin for multisig wallet', async() => {
+        const instance = await Multisig.deployed();
+        console.log(instance.address);
+
+        instance.submitTransaction(instance.address, 0, ["0x3d", "0x03", "0xec", "0x29"], { from: accounts[0] }).then(async(result) => {
+            //console.log(result);
+            var txncount = await instance.transactionCount.call();
+            var tmp = await instance.confirmTransaction(txncount - 1, { from: accounts[1] });
+            console.log(tmp);
+
+        }).catch((err) => {
+            console.log(err);
+        });;
+    });
+});
 contract('KNOW', async accounts => {
 
     it('addInvestorList() -> removeInvestorList() should do it right', async() => {
